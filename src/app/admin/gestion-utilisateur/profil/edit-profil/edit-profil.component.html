@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3>Modifier un profil</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="editProfil">
+            <div class="form-group">
+              <label for="">libelle</label>
+              <input type="text" name="libelle" id="libelle" class="form-control" placeholder="libelle" aria-describedby="helpId"
+              [formControlName]="'libelle'" required>
+              <small id="helpId" class="text-muted">Help text</small>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg float-left" (click)="onSubmit()">Modifier</button>
+            <button type="button" class="btn btn-primary btn-lg float-right" [routerLink]="['list']">Annuler</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>

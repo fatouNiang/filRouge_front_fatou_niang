@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header ">
+          <h4 class="text-center">modifier un groupe de competence</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="editGrpComptence">
+            {{editGrpComptence.value}}
+            <div class="form-group">
+              <label for="">libelle</label>
+              <input type="text" name="libelle" id="libelle" class="form-control" placeholder="libelle" aria-describedby="helpId"
+              [formControlName]="'libelle'" required>
+              <small id="helpId" class="text-muted">Help text</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              name="description" [formControlName]="'description'" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect2">Competences</label>
+              <select multiple="" class="form-control" id="competence"
+              [formControlName]="'competence'" required>
+                <option *ngFor="let competence let comptences">{{competence.libelle}} </option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onSubmit()">Modfier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

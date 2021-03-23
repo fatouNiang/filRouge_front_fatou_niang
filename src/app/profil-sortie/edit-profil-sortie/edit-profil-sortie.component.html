@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col"style="width: 25em">
+      <div class="card">
+        <div class="card-header">Modification d'un profil de sortie</div>
+          <div class="card-body">
+            <form [formGroup]="editPSortie" >
+              <div class="form-group">
+                <label for="">Libelle</label>
+                <input type="text" placeholder="libelle" id="libelle" class="form-control"
+                name="libelle" [formControlName]="'libelle'" required>
+              </div>
+              <button type="button" class="btn btn-outline-primary"(click)="onSubmit()">Modifier</button>
+            </form>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>

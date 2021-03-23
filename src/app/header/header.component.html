@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="../assets/SA.jpg" class="rounded float-left logoSA" alt="...">
+  <a class="navbar-brand" href="#">Sonatel Academy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLinkActive="active"><i class="fa fa-home" aria-hidden="true"></i>Home
+          <span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['gestionUser']" routerLinkActive="active"><i class="fa fa-user" aria-hidden="true"></i>Utilisateurs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['parametres']"  routerLinkActive="active"><i class="fa fa-cog" aria-hidden="true"></i>  Parametres</a>
+      </li>
+    </ul>
+
+  <div>
+
+
+  </div>
+  </div>
+
+ <div class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col">
+        <div class="form-group ">
+          <select id="inputState" class="form-control">cohorte 3
+            <option selected>cohorte 3</option>
+            <option>SA Cohort 2</option>
+          </select>
+        </div>
+      </div>
+    </div>
+ </div>
+ <img src="../assets/login.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" width="50" height="50" alt="profil">
+
+  <div class="btn btn-warning" (click)="deconnexion()" ><i class="fas fa-sign-out-alt"></i></div>
+</nav>

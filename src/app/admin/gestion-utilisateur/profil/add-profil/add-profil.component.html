@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3>Ajouter un profil</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="addProfil" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="">libelle</label>
+              <input type="text" name="libelle" id="" class="form-control" placeholder="libelle"
+              aria-describedby="helpId" formControlName="libelle"
+              [(ngModel)]="profil.libelle">
+              <small id="helpId" class="text-muted">Help text</small>
+            </div>
+            <button type="submit" name="" id="" class="btn btn-primary btn-lg float-left">Ajouter</button>
+            <button type="button" name="" id="" class="btn btn-primary btn-lg float-right" [routerLink]="['listProfil']">Annuler</button>
+ 
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<router-outlet></router-outlet>

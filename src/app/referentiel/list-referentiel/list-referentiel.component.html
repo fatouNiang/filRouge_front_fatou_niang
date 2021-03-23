@@ -1,0 +1,24 @@
+<div class="container">
+    <button type="button" class="btn btn-primary" [routerLink]="['add']"> <i class="fa fa-plus"></i> creer un referentiel</button>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  <hr>
+
+  <div class="row ">
+    <div class="col mb-5" *ngFor="let reference of tabRef">
+      <div class="card shadow-lg" style="width: 15em;">
+        <div class="card-header bg-primary text-center">
+          <h4 class="text-white">{{reference.libelle}} <i class="fas fa-edit float-right"></i><i class="fas fa-trash-alt float-right"></i></h4>
+        </div>
+        <div class="card-body">
+          <div class="card-text">{{reference.presentation}}</div>
+        </div>
+        <div class="card-footer">groupe comptence non liste</div>
+        <div class="card-footer">{{reference.programme}}</div>
+        <div class="card-footer">{{reference.critereEvaluation}}</div>
+        <div class="card-footer">{{reference.criteraAdmission}}</div>
+      </div>
+    </div>
+  </div>
+</div>

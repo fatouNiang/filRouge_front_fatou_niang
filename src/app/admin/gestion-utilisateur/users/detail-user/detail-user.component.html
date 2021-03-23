@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" style="width: 55em;">
+    <div class="col col-sm-6">
+      <div class="card">
+        <img class="card-img-top" src="data:image/jpg;base64,{{ user.photo}}" width="150" height="150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"> {{user.id}} </h5>
+          <h5 class="card-title"> {{user.username}} </h5>
+          <h5 class="card-title"> {{ user.firstName }} </h5>
+          <h5 class="card-title"> {{ user.LastName }} </h5>
+          <h5 class="card-title">{{user.email}}</h5>
+          <h5 class="card-title">{{user.profil}}</h5>
+          <h5 class="card-title">{{user.type}}</h5>
+          <a href="#" class="btn btn-warning">lister les utilisateur</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

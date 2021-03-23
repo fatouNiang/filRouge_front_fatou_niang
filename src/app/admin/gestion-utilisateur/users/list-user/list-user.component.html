@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col ml-2">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="card shadow-lg">
+      <div class="card-header">
+          <h3 class="text-center">Liste des utilisateurs</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">username</th>
+              <th scope="col"> firstname</th>
+              <th scope="col">lastname</th>
+              <th scope="col">email</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+              <th scope="row"> {{user.id}} </th>
+              <td> {{user.username}} </td>
+              <td>{{user.firstName}}</td>
+              <td>{{user.LastName}}</td>
+              <td>{{user.email}}</td>
+              <td><img src="data:image/jpg;base64,{{user.photo}}" width="50" height="50" alt=""></td>
+
+              <td><button type="button" class="btn btn-outline-warning" routerLink="{{user.id}}"><i class="fas fa-info-circle"></i>Detail</button></td>
+              <td><button type="button" class="btn bg_vert" [routerLink]="[3,'edit']"><i class="fas fa-pencil-alt"></i></button></td>
+              <td><button type="button" class="btn btn-outline-danger" (click)="deleteUser(user.id)" routerLink="{{user.id}}"><i class="fas fa-trash"></i></button></td>
+
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+
+  </div>
+  <!-- <div class="col">
+    <router-outlet></router-outlet>
+  </div> -->
+</div>

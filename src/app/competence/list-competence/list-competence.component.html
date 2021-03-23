@@ -1,0 +1,56 @@
+<div class="container">
+  <button type="button" class="btn btn-outline-primary" [routerLink]="['add']">Ajouter</button>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+    <div class="col mb-3">
+      <div class="card">
+        <div class="card-header">liste des competences</div>
+        <div class="card-body">
+          <div class="col-sm-6">
+              <!-- {{curentGrpCompetence | json}} -->
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Groupe Competence</label>
+              </div>
+              <select class="custom-select" id="competence" name="competence" (change)="changeSelect()" [formControl]="select">
+                <option *ngFor="let grpcompetence of tabGrpCompetence ; let i=index" [value]="i"> {{grpcompetence.libelle}} </option>
+              </select>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div *ngFor="let competence of curentGrpCompetence.competences; let i=index">
+              <h3 (click)="clickCompetence(i)">{{competence.libelle}} </h3>
+            </div>
+          </div>
+
+          <div class="col-sm-8" >
+              <div *ngFor="let niveau of curentCompetence.niveau; let i=index">
+                <a class="btn btn-primary" data-toggle="collapse" [href]="'#collapseExample'+(i+1)" role="button" aria-expanded="false"aria-controls="collapseExample1">
+                  Niveau {{i+1}}
+                </a>
+          <div class="collapse" [id]="'collapseExample'+(i+1)">
+            <div class="card card-body" >
+              <div class="card-title text-primary">critere d'evaluation</div>
+              {{niveau.critereEvaluation}}
+            </div>
+          </div>
+       </div>
+b
+  </div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

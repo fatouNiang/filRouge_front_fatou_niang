@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 ">
+      <button type="button" class="btn btn-outline-primary float-left" [routerLink]="['add']"><i class="fa fa-plus" aria-hidden="true"></i>ajouter</button>
+           <div class="col-sm-8 mt-5">
+          <router-outlet></router-outlet>
+        </div>
+
+         <div class="card mt-5 shadow-lg">
+           <div class="card-header text-center">
+            <h1>LISTE DES PROFILS DE SORTIES</h1>
+           </div>
+           <div class="card-body">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">libelle</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pSortie of pSorties | paginate: { itemsPerPage: 5, currentPage: p }">
+                  <th scope="row">{{pSortie.id}}</th>
+                  <td>{{pSortie.libelle}}</td>
+                  <td><button type="button" class="btn btn-outline-primary" routerLink="edit/{{pSortie.id}}"><i class="fas fa-pencil-alt"></i></button></td>
+                  <td><button type="button" class="btn btn-outline-danger" (click)="deletePsortie(pSortie.id)"><i class="fas fa-trash"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+           </div>
+
+         </div>
+
+
+    </div>
+
+  </div>
+
+</div>

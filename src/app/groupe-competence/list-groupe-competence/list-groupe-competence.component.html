@@ -1,0 +1,45 @@
+<button type="button" class="btn btn-outline-primary mb-3" [routerLink]="['add']"> <i class="fa fa-plus"></i>
+     ajouter un groupe de competence</button>
+    <router-outlet></router-outlet>
+
+  <div class="row mb-3">
+    <!-- {{tabGrpCompetence | json}} -->
+    <div class="col mt-3" *ngFor="let grpCompetence of tabGrpCompetence | paginate: { itemsPerPage: 8, currentPage: p }">
+      <div class="card shadow-lg bg-secondaire border border-info" style="width: 15rem;">
+
+        <div class="card-header bg-primary">
+          <h4>{{ grpCompetence.libelle }}
+            <button type="button" class="btn btn-outline-secondary" routerLink="edit/{{grpCompetence.id}}">
+              <i class="fas fa-pencil-alt float-right"></i>
+            </button>
+            <button type="button" class="btn btn-outline-warning">
+              <i class="fas fa-trash-alt float-right"></i>
+            </button>
+
+          </h4>
+        </div>
+        <div class="card-body">
+
+          <p class="card-text">
+            {{ grpCompetence.description }} </p>
+        </div>
+
+        <div class="card-footer bg-transparent border-primary">
+
+          <div class="card-header" (click)="clickCompetence()"
+          *ngFor="let competence of grpCompetence.competences">competence
+          <ul>
+            <li> {{competence.libelle}} </li>
+          </ul>
+        </div>
+          <div class="card-header">tags</div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- </div> -->
